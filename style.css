@@ -1,0 +1,128 @@
+body {
+  width: 100%;
+  height: 100%;
+  --size: 150px; /* control the size */
+  --color: #d1bdbd;
+
+  background: radial-gradient(
+      circle at 15% 30%,
+      transparent 40%,
+      var(--color) 41%
+    ),
+    radial-gradient(circle at 85% 30%, transparent 40%, var(--color) 41%),
+    radial-gradient(circle at 50% 70%, transparent 40%, var(--color) 41%),
+    radial-gradient(circle at 15% 70%, transparent 40%, var(--color) 41%),
+    radial-gradient(circle at 85% 70%, transparent 40%, var(--color) 41%),
+    linear-gradient(
+      45deg,
+      var(--color) 25%,
+      rgba(0, 0, 0, 0.067) 0,
+      rgba(0, 0, 0, 0.067) 50%,
+      var(--color) 0,
+      var(--color) 75%,
+      #1111 0,
+      #1111 100%,
+      var(--color) 0
+    );
+  background-size: var(--size) var(--size);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cards .c1 {
+  background-image: linear-gradient(
+    155deg,
+    rgba(103, 89, 81, 0.1),
+    rgba(159, 14, 198, 0.9)
+  );
+}
+.cards .c2 {
+  background-image: linear-gradient(
+    342deg,
+    rgba(18, 208, 58, 0.2),
+    rgba(196, 181, 132, 0.9)
+  );
+}
+.cards .c3 {
+  background-image: linear-gradient(
+    97deg,
+    rgba(211, 45, 3, 0.8),
+    rgba(118, 215, 239, 0.5)
+  );
+}
+.cards .c4 {
+  background-image: linear-gradient(
+    201deg,
+    rgba(228, 93, 13, 0.9),
+    rgba(143, 210, 195, 0.7)
+  );
+}
+.cards .c5 {
+  background-image: linear-gradient(
+    282deg,
+    rgba(123, 7, 183, 0.1),
+    rgba(89, 107, 48, 0.5)
+  );
+}
+
+.cards .c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 95px;
+  width: 240px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cards .c a {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards .c:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .c:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+a:active {
+  text-decoration: underline;
+  color: red;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #494848;
+}
+
+a:visited {
+  color: purple;
+}
+
+@media screen and (min-width: 426px) {
+  .cards {
+    padding-top: 20%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
